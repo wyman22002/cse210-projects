@@ -1,14 +1,74 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
-using VerseHolder;
-
 public class RandomWordSelector
 {
-    private int LoopTimes = 0;
-    public string[] _VerseList = VerseHolder._Verse.Split(' ');
-    private int ListNum = _VerseList.Count;
-    list<int> UsedWords = new list<int>();
-    static void ReplaceWords() {
+
+    public List<int> rndNumList;
+    public int rndNum;
+    public int totalNumberOfWords;
+    //public string[] _VerseList = VerseHolder._Verse.Split(' ');
+    //private int ListNum = _VerseList.Count;
+
+    
+    public List<int> ReplaceWords(List<int> usedNum) {
+        Random rnd = new Random();
+
+        VerseHolder holder1 = new VerseHolder();
+        var _VerseList = holder1._Verse.Split(' ');
+
+        var listTotal = _VerseList.Count();
+
+        int chance = rnd.Next(listTotal);
+        var used1 = new List<int>();
+        var RndWordSelector = new RandomWordSelector();
+
+        if (usedNum == null) {
+            used1.Add(chance);
+            RndWordSelector = RandomNumberHolder(used1, chance, listTotal);
+        } else {
+            RndWordSelector = RandomNumberHolder(usedNum, chance, listTotal);
+        }
+
+        
+
+        int[] usedWords = new int[listTotal];
+        Console.WriteLine(usedWords.ToList().ToString());
+
+        return RndWordSelector.rndNumList;
+    }
+
+    public RandomWordSelector RandomNumberHolder(List<int> numberHolder, int rndNumber,int TotalNum) {
+        Random rnd = new Random();
+        int chance = rndNumber;
+        List<int> numHold = new List<int>();
+        numHold = numberHolder;
+        //Console.WriteLine(chance);
+        //Console.WriteLine(TotalNum);
+        //Console.WriteLine(numberHolder[0]);
+
+
+            if (numHold.Contains(chance)) {
+                chance = rnd.Next(TotalNum);
+            }
+        
+
+        numHold.Add(chance);
+        var rndWordSelector = new RandomWordSelector();
+        
+        rndWordSelector.rndNumList = numberHolder;
+        rndWordSelector.rndNum = chance;
+        rndWordSelector.totalNumberOfWords = TotalNum;
+        
+        return rndWordSelector; 
+    }
+
+//        VerseHolder holder1 = new VerseHolder();
+//        public string[] _VerseList = VerseHolder._Verse.Split(' ');
+
+
+//      UsedWords = new list<int>();
+/*    static string ReplaceWords() {
         do 
         {
             Random _randomNumber = new Random();
@@ -32,7 +92,9 @@ public class RandomWordSelector
         } while (LoopTimes > 3);
         
        //add all _VerseList items into a single string then return value to VerseHolder
-       return _VerseList;
+        //foreach (word in _VerseList) {}
+        
+        return _VerseList;
     }
-    public RandomWordSelector(){}
+    public RandomWordSelector(){}*/
 }
