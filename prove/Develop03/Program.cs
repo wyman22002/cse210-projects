@@ -7,21 +7,23 @@ class Program
 
     static void Main(string[] args)
     {
-        List<int> NumberList = new List<int>();
+        VerseHolder holder = new VerseHolder();
+
+        var UpdatedVerse = holder._Verse;
 
         string UserInput = "";
         int counter = 0;
         while (UserInput != "quit") {
-            VerseHolder holder = new VerseHolder();
             var compilier = holder.VerseCompilier();
             var original = holder._VerseOriginal.Split(" ");
             var total = original.Count();
 
             if (counter == 0) {
                 Console.WriteLine(compilier);
+                
             } else {
             DisplayScripture display1 = new DisplayScripture();
-            display1.Display();
+            UpdatedVerse = display1.Display(UpdatedVerse);
             }
 
             counter += 1;
