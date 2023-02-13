@@ -5,7 +5,7 @@ public class DisplayScripture
 {
     //runs the VerseCompilier from VerseHolder to put the scripture into a single string
     //then displays the compleated Verse
-    public string UnderscoreFunc(string word) {
+    private string UnderscoreFunc(string word) {
             var wordCount = word.Count();
             var blankWord = "";
             var singleWordCounter = 0;
