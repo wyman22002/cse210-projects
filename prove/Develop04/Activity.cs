@@ -35,12 +35,25 @@ public class Activity
 
 
     public void DisplayIntroMessage() {
-        Console.WriteLine(_introMessage);
+        Console.Clear();
+        Console.Write("Welcome to the ");
+        Console.WriteLine(_introMessage, ".");
+        Console.WriteLine();
+        Console.WriteLine(_explanationMessage);
+
     }
     public void DisplayExplanation() {
         Console.WriteLine(_explanationMessage);
     }
     public void DisplayOutroMessage() {
         Console.WriteLine(_outroMessage);
+        Thread.Sleep(5000);
+    }
+    public int Length() {
+        Console.WriteLine();
+        Console.Write("How long, in seconds, would you like for your session? ");
+        string userTime = Console.ReadLine();
+        _time = int.Parse(userTime);
+        return _time;
     }
 }
