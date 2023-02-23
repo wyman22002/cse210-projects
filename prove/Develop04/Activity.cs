@@ -1,22 +1,20 @@
 public class Activity
 {
-    private string _introMessage = "";
+    private string _activityType = "";
     private string _explanationMessage = "";
     private int _time;
-    private string _outroMessage = "";
 
-    public Activity(string introMessage, string explanationMessage, string outroMessage)
+    public Activity(string activityType, string explanationMessage)
     {
-        _introMessage = introMessage;
+        _activityType = activityType;
         _explanationMessage = explanationMessage;
-        _outroMessage = outroMessage;
     }
 
-    public string GetIntroMessage() {
-        return _introMessage;
+    public string GetActivityType() {
+        return _activityType;
     }
-    public void SetIntroMessage(string introMessage) {
-        _introMessage = introMessage;
+    public void SetActivityType(string activityType) {
+        _activityType = activityType;
     }
 
     public string GetExplanationMessage() {
@@ -26,28 +24,32 @@ public class Activity
         _explanationMessage = explanationMessage;
     }
 
-    public string GetOutroMessage() {
-        return _outroMessage;
+    public void LoadAnime(int loadTime)
+    {
+        while(loadTime > 0){
+            Console.Write(".");
+            Thread.Sleep(500);
+            Console.Write("\b \b");
+            Console.Write("!");
+            Thread.Sleep(500);
+            Console.Write("\b \b");
+            loadTime -= 1;
+        }
     }
-    public void SetOutroMessage(string outroMessage) {
-        _outroMessage = outroMessage;
-    }
-
 
     public void DisplayIntroMessage() {
         Console.Clear();
         Console.Write("Welcome to the ");
-        Console.WriteLine(_introMessage, ".");
+        Console.WriteLine(_activityType + ".");
         Console.WriteLine();
-        Console.WriteLine(_explanationMessage);
-
-    }
-    public void DisplayExplanation() {
         Console.WriteLine(_explanationMessage);
     }
     public void DisplayOutroMessage() {
-        Console.WriteLine(_outroMessage);
-        Thread.Sleep(5000);
+        Console.WriteLine("Well done!!");
+        Thread.Sleep(2000);
+        Console.WriteLine();
+        Console.WriteLine($"You have completed another {_time} seconds of the {_activityType}");
+        Thread.Sleep(3000);
     }
     public int Length() {
         Console.WriteLine();
