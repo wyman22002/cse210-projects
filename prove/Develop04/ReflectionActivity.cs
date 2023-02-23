@@ -52,23 +52,35 @@ public class ReflectionActivity : Activity
         Console.WriteLine();
         Console.WriteLine("When you have something in mind, press enter to continue.");
         Console.ReadLine();
+        Console.WriteLine("Now ponder on each of the following questions as they related to this experience.");
+        Console.Write("You may begin in: 5");
+
+        //Count Down
+        int waitTime = 5;
+        while (waitTime != 0){
+            string waitString = waitTime.ToString();
+            Thread.Sleep(1000);
+            Console.Write("\b \b \b");
+            waitTime -= 1;
+            waitString = waitTime.ToString();
+            Console.Write($"{waitString}");
+        }
     }
 
     public void DisplayStatment(int _time){
         Console.Clear();
         while (_time > 0){
-            if (_time < 10 && _time > 0) {
-                Console.WriteLine(_time);
+            if (_time < 15 && _time > 0) {
                 GetRandomStatment();
-                Console.WriteLine(">" + chosenStatment);
+                Console.Write(">" + chosenStatment + " ");
                 LoadAnime(_time);
                 _time -= _time;
 
             } else {
                 GetRandomStatment();
-                Console.WriteLine(">" + chosenStatment);
-                LoadAnime(10);
-                _time -= 10;  
+                Console.Write(">" + chosenStatment + " ");
+                LoadAnime(15);
+                _time -= 15;  
             }
             Console.WriteLine();
         }

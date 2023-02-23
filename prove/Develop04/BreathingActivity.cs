@@ -18,6 +18,7 @@ public class BreathingActivity : Activity
             waitString = _wait.ToString();
             Console.Write($"{waitString}");
         }
+        Console.Write("\b \b \b");
     }
     private void BreathOut(int _wait) {
         string waitString = _wait.ToString();
@@ -30,6 +31,7 @@ public class BreathingActivity : Activity
             waitString = _wait.ToString();
             Console.Write($"{waitString}");
         }
+        Console.Write("\b \b \b");
     }
 
     public void BreathActivity(int _time) {

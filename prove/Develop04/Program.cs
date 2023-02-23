@@ -50,9 +50,12 @@ class Program
             else if (userChoice == "3") {
                 ListingActivity listingActivity1 = new ListingActivity(
                 "Listing Activity", 
-                "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.");
+                "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area."
+                );
 
                 listingActivity1.DisplayIntroMessage();
+                userTime = listingActivity1.Length();
+                listingActivity1.Listing(userTime);
                 listingActivity1.DisplayOutroMessage();
             }
 

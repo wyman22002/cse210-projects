@@ -46,10 +46,10 @@ public class Activity
     }
     public void DisplayOutroMessage() {
         Console.WriteLine("Well done!!");
-        Thread.Sleep(2000);
+        LoadAnime(2);
         Console.WriteLine();
         Console.WriteLine($"You have completed another {_time} seconds of the {_activityType}");
-        Thread.Sleep(3000);
+        LoadAnime(2);
     }
     public int Length() {
         Console.WriteLine();
