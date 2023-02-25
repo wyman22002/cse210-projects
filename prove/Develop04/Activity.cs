@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 public class Activity
 {
     private string _activityType = "";
@@ -26,6 +28,17 @@ public class Activity
 
     public void LoadAnime(int loadTime)
     {
+        List<string> animationStrings = new List<string>();
+        animationStrings.Add("|");
+        animationStrings.Add("/");
+        animationStrings.Add("-");
+        animationStrings.Add("\\");
+        animationStrings.Add("|");
+        animationStrings.Add("/");
+        animationStrings.Add("-");
+        animationStrings.Add("\\");
+        Console.ForegroundColor = ConsoleColor.Red;
+        /*
         while(loadTime > 0){
             Console.Write(".");
             Thread.Sleep(500);
@@ -35,6 +48,24 @@ public class Activity
             Console.Write("\b \b");
             loadTime -= 1;
         }
+        */
+        DateTime startTime = DateTime.Now;
+        DateTime endTime = startTime.AddSeconds(loadTime);
+
+        int i = 0;
+
+        while (DateTime.Now < endTime) {
+            string s = animationStrings[i];
+            Console.Write(s);
+            Thread.Sleep(200);
+            Console.Write("\b \b");
+
+            i++;
+            if (i >= animationStrings.Count) {
+                i = 0;
+            }
+        }
+        Console.ForegroundColor = ConsoleColor.White;
     }
 
     public void DisplayIntroMessage() {

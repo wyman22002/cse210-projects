@@ -5,7 +5,6 @@ public class BreathingActivity : Activity
     {
         
     }
-    
 
     private void BreathIn(int _wait) {
         string waitString = _wait.ToString();

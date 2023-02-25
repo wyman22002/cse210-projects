@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 class Program
 {
@@ -7,14 +8,21 @@ class Program
         string userChoice = "0";
         int userTime = 0;
 
+
         while(userChoice != "4"){
 
+            //Added collor to the menue as part of execeding the requirments
             Console.Clear();
             Console.WriteLine("Menu Options:");
+            Console.BackgroundColor = ConsoleColor.Cyan;
             Console.WriteLine("   1. Start breathing activity");
+            Console.BackgroundColor = ConsoleColor.Green;
             Console.WriteLine("   2. Start reflecting activity");
+            Console.BackgroundColor = ConsoleColor.Yellow;
             Console.WriteLine("   3. Start listing activity");
+            Console.BackgroundColor = ConsoleColor.DarkRed;
             Console.WriteLine("   4. Quit");
+            Console.BackgroundColor = ConsoleColor.Black;
             Console.Write("Select a choice from the menu: ");
             userChoice = Console.ReadLine();
 
