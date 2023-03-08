@@ -1,3 +1,4 @@
+using System.IO;
 public abstract class CreateGoal
 {
     private string _goalName = "";
@@ -34,10 +35,14 @@ public abstract class CreateGoal
     public virtual void WriteFile() {
         string fileName = "tempFile.txt";
 
-        using (StreamWriter outputFile = new StreamWriter(fileName))
+        //SimpleGoal | Name | Description | BasePoints | Compleated
+        //EternalGoal | Name | Description | BasePoints
+        //ChecklistGoal | Name | Description | BasePoints | BonusPoints | TotalNum | CurrentNum
+
+        using (StreamWriter outputFile = new StreamWriter(fileName, true))
         {
             // You can add text to the file with the WriteLine method
-            outputFile.WriteLine($"{_goalName}|{_description}|{_basePoints}");
+            outputFile.WriteLine($"SimpleGoal|{_goalName}|{_description}|{_basePoints}|false");
 
         }
     }

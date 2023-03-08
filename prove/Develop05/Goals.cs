@@ -17,11 +17,12 @@ public class SimpleGoal : CreateGoal
         int basePoints = int.Parse(points);
         SetPoints(basePoints);
 
+        //GoalType | Name | Description | BasePoints | Compleated
         WriteFile();
     }
 }
 
-/*
+
 public class EternalGoal : CreateGoal
 {
     public override void GoalCreation(){
@@ -56,6 +57,22 @@ public class ChecklistGoal : CreateGoal
         int basePoints = int.Parse(points);
         SetPoints(basePoints);
 
+        Console.Write("how many times does this goal need to be accomplished for a bonus? ");
+        string numOfTimes = Console.ReadLine();
+        int times = int.Parse(numOfTimes);
+
+        Console.Write("What is the bonus for accomplisting it that many times? ");
+        string pointPlus = Console.ReadLine();
+        int extraPoints = int.Parse(pointPlus);
+    }
+    public override void WriteFile() {
+        string fileName = "tempFile.txt";
+
+        using (StreamWriter outputFile = new StreamWriter(fileName))
+        {
+            // You can add text to the file with the WriteLine method
+            //outputFile.WriteLine($"SimpleGoal|{CreateGoal._goalName}|{CreateGoal._description}|{CreateGoal._basePoints}|{extraPoints}");
+
+        }
     }
 }
-*/
