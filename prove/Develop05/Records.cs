@@ -1,8 +1,8 @@
-public class DisplaySimple : ListGoal
+/*
+public class SimpleRecord : RecordEvent
 {
-    public override void DisplayGoal(){
+    public override void EventRecorder(){
         string filename = "tempFile.txt";
-        int goalNum = GetBonus();
 
         string line = File.ReadLines(filename).Skip(goalNum).Take(1).First();
 
@@ -10,58 +10,58 @@ public class DisplaySimple : ListGoal
 
         //GoalType | Name | Description | BasePoints | Compleated
         string goalName = parts[1];
-        string description = parts[2];
         string basePoints = parts[3];
         string completed = parts[4];
-        string checkMark = " ";
+
         if (completed == "true"){
-            checkMark = "X";
+        } else{
+            Console.WriteLine($"{goalNum.ToString()}. {goalName}");
+
         }
+
         
-        Console.WriteLine($"{goalNum.ToString()}. [{checkMark}] {goalName} ({description})");
     }
 }
 
-public class DisplayEternal : ListGoal
+public class EternalRecord : RecordEvent
 {
-    public override void DisplayGoal(){
+    public override void EventRecorder(){
         string filename = "tempFile.txt";
         string[] lines = System.IO.File.ReadAllLines(filename);
-        int goalNum = GetBonus();
 
-        string line = File.ReadLines(filename).Skip(goalNum).Take(1).First();
-        
+        foreach (string line in lines.Skip(1))
+        {
             string[] parts = line.Split("|");
 
             //GoalType | Name | Description | BasePoints
             string goalName = parts[1];
-            string description = parts[2];
             string basePoints = parts[3];
             
-            Console.WriteLine($"{goalNum.ToString()}. [ ] {goalName} ({description})");
-        
+            Console.WriteLine($"{goalNum.ToString()}. {goalName}");
+        }
     }
+
 }
 
-public class DisplayChecklist : ListGoal
+public class ChecklistRecord : RecordEvent
 {
-    public override void DisplayGoal(){
+    public override void EventRecorder(){
         string filename = "tempFile.txt";
         string[] lines = System.IO.File.ReadAllLines(filename);
-        int goalNum = GetBonus();
 
-        string line = File.ReadLines(filename).Skip(goalNum).Take(1).First();
-        
+        foreach (string line in lines.Skip(1))
+        {
             string[] parts = line.Split("|");
 
             //GoalType | Name | Description | BasePoints | BonusPoints | TotalNum | CurrentNum
             string goalName = parts[1];
-            string description = parts[2];
             string basePoints = parts[3];
             string totalNum = parts[5];
             string currentNum = parts[6];
             
-            Console.WriteLine($"{goalNum.ToString()}. [ ] {goalName} ({description}) -- Currently completed: {currentNum}/{totalNum}");
-        
+            Console.WriteLine($"{goalNum.ToString()}. {goalName}");
+        }
     }
+
 }
+*/

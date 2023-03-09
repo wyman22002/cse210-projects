@@ -7,7 +7,7 @@ class Program
     {
 
         string fileName = "tempFile.txt";
-
+        //Sets the point value in the new txt file to 0
         using (StreamWriter outputFile = new StreamWriter(fileName))
         {
             outputFile.WriteLine("0");
@@ -18,9 +18,10 @@ class Program
         Console.Clear();
 
         while(UserChoice != "6"){
+            //Displays the current value of points from the txt file
             string points = File.ReadLines(fileName).First();
 
-            Console.WriteLine(points);
+            Console.WriteLine($"You have {points} points!");
             Console.WriteLine();
             Console.WriteLine("Menu Options:");
             Console.WriteLine("    1. Create New Goal");
@@ -62,8 +63,8 @@ class Program
                 }
                 else if (UserChoice == "2"){
                     //Displays all of the goals
-                    DisplaySimple dis1 = new DisplaySimple();
-                    dis1.DisplayGoal();
+                    ListGoal display = new ListGoal();
+                    display.RunThoughList();
                     Console.WriteLine();
                 }
                 else if (UserChoice == "3"){

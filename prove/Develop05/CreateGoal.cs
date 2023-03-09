@@ -4,6 +4,8 @@ public abstract class CreateGoal
     private string _goalName = "";
     private string _description = "";
     private int _basePoints;
+    private int _numOfTimes;
+    private int _bonus;
 
     public CreateGoal(){
 
@@ -28,6 +30,19 @@ public abstract class CreateGoal
     }
     public void SetPoints(int basePoints) {
         _basePoints = basePoints;
+    }
+
+    public int GetNumOfTimes() {
+        return _numOfTimes;
+    }
+    public void SetNumOfTimes(int numOfTimes) {
+        _numOfTimes = numOfTimes;
+    }
+    public int GetBonus() {
+        return _bonus;
+    }
+    public void SetBonus(int bonus) {
+        _bonus = bonus;
     }
 
     public abstract void GoalCreation();
