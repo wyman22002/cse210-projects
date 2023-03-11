@@ -2,7 +2,7 @@ public class DisplaySimple : ListGoal
 {
     public override void DisplayGoal(){
         string filename = "tempFile.txt";
-        int goalNum = GetBonus();
+        int goalNum = GetGoalNum();
 
         string line = File.ReadLines(filename).Skip(goalNum).Take(1).First();
 
@@ -27,7 +27,7 @@ public class DisplayEternal : ListGoal
     public override void DisplayGoal(){
         string filename = "tempFile.txt";
         string[] lines = System.IO.File.ReadAllLines(filename);
-        int goalNum = GetBonus();
+        int goalNum = GetGoalNum();
 
         string line = File.ReadLines(filename).Skip(goalNum).Take(1).First();
         
@@ -48,7 +48,7 @@ public class DisplayChecklist : ListGoal
     public override void DisplayGoal(){
         string filename = "tempFile.txt";
         string[] lines = System.IO.File.ReadAllLines(filename);
-        int goalNum = GetBonus();
+        int goalNum = GetGoalNum();
 
         string line = File.ReadLines(filename).Skip(goalNum).Take(1).First();
         
@@ -61,7 +61,12 @@ public class DisplayChecklist : ListGoal
             string totalNum = parts[5];
             string currentNum = parts[6];
             
-            Console.WriteLine($"{goalNum.ToString()}. [ ] {goalName} ({description}) -- Currently completed: {currentNum}/{totalNum}");
+            string checkMark = " ";
+            if (totalNum == currentNum){
+                checkMark = "X";
+            }
+
+            Console.WriteLine($"{goalNum.ToString()}. [{checkMark}] {goalName} ({description}) -- Currently completed: {currentNum}/{totalNum}");
         
     }
 }

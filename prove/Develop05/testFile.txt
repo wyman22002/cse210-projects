@@ -1,0 +1,5 @@
+425
+SimpleGoal|Beat Dragon Quest|Before May 12|400|true
+EternalGoal|Say morning prayer|before shcool work in the morning|25
+SimpleGoal|Finish school work for week|week of march 10|100|false
+ChecklistGoal|Pet Charizard|Gently pat Charizard on the snouth|30|500|5|0

@@ -29,7 +29,7 @@ class Program
             Console.WriteLine("    3. Save Goal");
             Console.WriteLine("    4. Load Goal");
             Console.WriteLine("    5. Record Event");
-            Console.WriteLine("    6. Quite");
+            Console.WriteLine("    6. Quit");
             Console.Write("Select a choice from the menu: ");
             UserChoice = Console.ReadLine();
             
@@ -99,6 +99,9 @@ class Program
                 }
                 else if (UserChoice == "5"){
                     //Check off a goal
+                    RecordEvent record = new RecordEvent();
+                    record.Recorder();
+                    Console.WriteLine();
 
                 }
                 else if (UserChoice == "6"){

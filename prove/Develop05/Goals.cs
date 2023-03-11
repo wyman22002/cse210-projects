@@ -97,7 +97,7 @@ public class ChecklistGoal : CreateGoal
         using (StreamWriter outputFile = new StreamWriter(fileName, true))
         {
             // You can add text to the file with the WriteLine method
-            outputFile.WriteLine($"SimpleGoal|{name}|{description}|{basePoints}|{bonus}|{times}|0");
+            outputFile.WriteLine($"ChecklistGoal|{name}|{description}|{basePoints}|{bonus}|{times}|0");
 
         }
     }

@@ -2,10 +2,10 @@ public class ListGoal
 {
     public static int _goalNum = 1;
 
-    public int GetBonus() {
+    public int GetGoalNum() {
         return _goalNum;
     }
-    public void SetBonus(int goalNum) {
+    public void SetGoalNum(int goalNum) {
         _goalNum = goalNum;
     }
     
@@ -36,8 +36,9 @@ public class ListGoal
                 goal3.DisplayGoal();
             }
             lineNum ++;
-            SetBonus(lineNum); 
+            SetGoalNum(lineNum); 
         }
+        SetGoalNum(1);
     }
     public virtual void DisplayGoal(){}
 }
