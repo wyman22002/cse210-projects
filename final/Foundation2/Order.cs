@@ -1,7 +1,7 @@
 public class Order
 {
     private int _Shipping = 0;
-
+    private int _Total = 0;
     private List<string> _products = new List<string>();
     private List<string> _customers = new List<string>();
 
@@ -25,9 +25,9 @@ public class Order
             string id = products[1];
             int price = int.Parse(products[2]);
             priceTotal += price;
-            label += $"{name} {id}";
+            label += $"{name} {id}\n";
         }
-        priceTotal += _Shipping;
+        _Total = priceTotal;
         return label;
     }
 
@@ -39,11 +39,12 @@ public class Order
         return $"{name}\n{address}";
     }
 
-    public void AddressCreator(bool country){
+    public int AddressCreator(bool country){
         if (country == true){
             _Shipping = 5;
         } else {
             _Shipping = 35;
         }
+        return _Total + _Shipping;
     }
 }

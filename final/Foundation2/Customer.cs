@@ -9,8 +9,8 @@ public class Customer
         _userName = name;
     }
 
-    public bool CustomerAddress(){
-        Address address = new Address();
+    public bool CustomerAddress(Address address){
+    //    Address address = new Address();
         bool country = address.InUSA();
         return country;
     }
