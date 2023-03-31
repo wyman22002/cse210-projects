@@ -7,7 +7,7 @@ public class Rescptions: Event
         _rsvp = rsvp;
         _email = email;
     }
-    public string Full(){
+    public string RescptionsFull(){
         string rsvp = "";
         if(_rsvp == true){
             rsvp = "Yes";

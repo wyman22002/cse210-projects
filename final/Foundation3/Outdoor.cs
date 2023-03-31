@@ -5,7 +5,7 @@ public class Outdoor: Event
     {
         _weather = weather;
     }
-    public string Full(){
+    public string OutdoorFull(){
         return $"Event: {_title}\nDescription: {_description}\nDate: {_date}\nAddress: {_address}\nThe weather is expected to be {_weather}.";
     }
 }

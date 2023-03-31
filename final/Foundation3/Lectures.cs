@@ -7,7 +7,7 @@ public class Lectures: Event
         _speakers = speakers;
         _capacity = capacity;
     }
-    public string Full(){
+    public string LecturesFull(){
         return $"Event: {_title}\nDescription: {_description}\nDate: {_date}\nAddress: {_address}\nSpeaker: {_speakers}\nCapacity: {_capacity}";
     }
 }

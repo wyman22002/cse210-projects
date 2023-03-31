@@ -4,31 +4,20 @@ class Program
 {
     static void Main(string[] args)
     {
-        Product product1 = new Product();
-        product1.SetProductId("8729");
-        product1.SetName("Kit-Kat bars");
-        product1.SetPrice(2);
-        product1.SetQuantity(10);
+        Product product1 = new Product("8729", "Kit-Kat bars", 2,  10);
         int total = product1.GetPriceTotal();
         string productDes = $"{product1.GetName()}|{product1.GetProductId()}|{product1.GetPriceTotal().ToString()}|{product1.GetQuantity().ToString()}";
 
         Order order1 = new Order();
         order1.AddProducts(productDes);
 
-        product1.SetProductId("2508");
-        product1.SetName("T-Shirts");
-        product1.SetPrice(12);
-        product1.SetQuantity(3);
-        total = product1.GetPriceTotal();
-        productDes = $"{product1.GetName()}|{product1.GetProductId()}|{product1.GetPriceTotal().ToString()}|{product1.GetQuantity().ToString()}";
+        Product product2 = new Product("2508", "T-Shirts", 12, 3);
+        total = product2.GetPriceTotal();
+        productDes = $"{product2.GetName()}|{product2.GetProductId()}|{product2.GetPriceTotal().ToString()}|{product2.GetQuantity().ToString()}";
 
         order1.AddProducts(productDes);
 
-        Address address1 = new Address();
-        address1.SetStreet("Stright Lane, PO 62779");
-        address1.SetCity("Harisvile");
-        address1.SetState("Ohio");
-        address1.SetCountry("USA");
+        Address address1 = new Address("Stright Lane, PO 62779", "Harisvile", "Ohio", "USA");
         string fullAddress = address1.SetCompleateAddress();
 
         Customer customer1 = new Customer();
@@ -52,37 +41,23 @@ class Program
         Console.WriteLine();
 
 
-        Product product2 = new Product();
+        Product product3 = new Product("1161", "Learn to Play the Bagpips Book", 17, 1);
         Order order2 = new Order();
-        product2.SetProductId("1161");
-        product2.SetName("Learn to Play the Bagpips Book");
-        product2.SetPrice(17);
-        product2.SetQuantity(1);
-        total = product2.GetPriceTotal();
-        productDes = $"{product2.GetName()}|{product2.GetProductId()}|{product2.GetPriceTotal().ToString()}|{product2.GetQuantity().ToString()}";
+        total = product3.GetPriceTotal();
+        productDes = $"{product3.GetName()}|{product3.GetProductId()}|{product3.GetPriceTotal().ToString()}|{product3.GetQuantity().ToString()}";
         order2.AddProducts(productDes);
 
-        product2.SetProductId("3957");
-        product2.SetName("Health Bars");
-        product2.SetPrice(5);
-        product2.SetQuantity(5);
-        total = product2.GetPriceTotal();
-        productDes = $"{product2.GetName()}|{product2.GetProductId()}|{product2.GetPriceTotal().ToString()}|{product2.GetQuantity().ToString()}";
+        Product product4 = new Product("3957", "Health Bars", 5, 5);
+        total = product4.GetPriceTotal();
+        productDes = $"{product4.GetName()}|{product4.GetProductId()}|{product4.GetPriceTotal().ToString()}|{product4.GetQuantity().ToString()}";
         order2.AddProducts(productDes);
 
-        product2.SetProductId("0128");
-        product2.SetName("USB-C Cable");
-        product2.SetPrice(8);
-        product2.SetQuantity(3);
-        total = product2.GetPriceTotal();
-        productDes = $"{product2.GetName()}|{product2.GetProductId()}|{product2.GetPriceTotal().ToString()}|{product2.GetQuantity().ToString()}";
+        Product product5 = new Product("0128", "USB-C Cable", 8, 3);
+        total = product5.GetPriceTotal();
+        productDes = $"{product5.GetName()}|{product5.GetProductId()}|{product5.GetPriceTotal().ToString()}|{product5.GetQuantity().ToString()}";
         order2.AddProducts(productDes);
 
-        Address address2 = new Address();
-        address2.SetStreet("7809 Carr Place");
-        address2.SetCity("Okotoks");
-        address2.SetState("Alberta");
-        address2.SetCountry("Canada");
+        Address address2 = new Address("7809 Carr Place", "Okotoks", "Alberta", "Canada");
         fullAddress = address2.SetCompleateAddress();
 
         Customer customer2 = new Customer();

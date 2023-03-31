@@ -12,7 +12,7 @@ class Program
         Console.WriteLine();
         Console.WriteLine("Lecture" + lectures1.Short());
         Console.WriteLine();
-        Console.WriteLine(lectures1.Full());
+        Console.WriteLine(lectures1.LecturesFull());
         Console.WriteLine();
 
         Address address2 = new Address("Hamilton Dome", "Portland", "OR", "U.S.A");
@@ -23,7 +23,7 @@ class Program
         Console.WriteLine();
         Console.WriteLine("Rescption" + rescptions1.Short());
         Console.WriteLine();
-        Console.WriteLine(rescptions1.Full());
+        Console.WriteLine(rescptions1.RescptionsFull());
         Console.WriteLine();
 
         Address address3 = new Address("Clover Ampatheater", "Dayton", "OH", "U.S.A");
@@ -34,7 +34,7 @@ class Program
         Console.WriteLine();
         Console.WriteLine("Outdoor" + outdoor1.Short());
         Console.WriteLine();
-        Console.WriteLine(outdoor1.Full());
+        Console.WriteLine(outdoor1.OutdoorFull());
         Console.WriteLine();
     }
 }

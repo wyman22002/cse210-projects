@@ -18,9 +18,6 @@ public class Event
         return $"Event: {_title}\nDescription: {_description}\nDate: {_date}\nAddress: {_address}";
     }
 
-    public string Full(){
-        return $"";
-    }
 
     public string Short(){
         return $"\nTitle: {_title}\nDate: {_date}";
